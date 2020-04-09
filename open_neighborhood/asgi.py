@@ -1,5 +1,5 @@
 """
-ASGI config for open_neighboorhood project.
+ASGI config for open_neighborhood project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'open_neighboorhood.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'open_neighborhood.settings')
 
 application = get_asgi_application()

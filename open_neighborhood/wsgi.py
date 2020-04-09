@@ -1,5 +1,5 @@
 """
-WSGI config for open_neighboorhood project.
+WSGI config for open_neighborhood project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'open_neighboorhood.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'open_neighborhood.settings')
 
 application = get_wsgi_application()
