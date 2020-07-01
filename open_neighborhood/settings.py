@@ -81,7 +81,14 @@ WSGI_APPLICATION = 'open_neighborhood.wsgi.application'
 # Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
     # read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
-    'default': env.db(),
+    'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'neighborhoodDB',
+            'USER': 'neighborhoodAdmin',
+            'PASSWORD': 'pass',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
 }
 
 
