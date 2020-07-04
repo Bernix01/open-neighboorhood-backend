@@ -15,7 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import include
+from neighborhood import views
+
+# urlpatterns = [
+#    path('admin/', admin.site.urls),
+#    path('neighborhood_statistics/', include('neighborhood_statistics.urls')),
+#    path('neighborhood/', include('neighborhood.urls')),
+#    path('aliquots/', include('aliquots.urls')),
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^$', views.index, name='index'),
+    url(r'^neighborhood/', include('neighborhood.urls')),
+    url(r'^neighborhood_statistics/', include('neighborhood_statistics.urls')),
+    url(r'^aliquots/', include('aliquots.urls')),
+    url(r'^admin/', admin.site.urls),
 ]
