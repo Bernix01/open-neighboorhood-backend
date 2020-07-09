@@ -8,6 +8,8 @@ class Person(models.Model):
     name = models.CharField(max_length=100)
     birth = models.DateField()
     status = models.BooleanField()
+    email = models.CharField(max_length=100,null=False , default='user@user.com' )
+    password = models.CharField(max_length=12,null=False, default= '')
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -54,7 +56,7 @@ class Employee(models.Model):
     
 class Role(models.Model):
     role_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,null=False)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

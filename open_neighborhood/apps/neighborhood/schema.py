@@ -36,7 +36,6 @@ class RoleType(DjangoObjectType):
     class Meta:
         model= Role
 
-
 class Query(graphene.ObjectType):
     persons = graphene.List(PersonType)
     residents = graphene.List(ResidentType)
@@ -49,7 +48,6 @@ class Query(graphene.ObjectType):
 
     def resolve_persons(self, info, **kwargs):
         return Person.objects.all()
-
 
     def resolve_residents(self, info, **kwargs):
         return Resident.objects.all()

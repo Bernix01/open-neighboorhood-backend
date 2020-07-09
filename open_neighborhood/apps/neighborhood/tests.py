@@ -17,6 +17,8 @@ class MyTestCase(GraphQLTestCase):
                     name
                     birth
                     status
+                    mail
+                    password
                     created_at 
                 }
             }                     
