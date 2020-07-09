@@ -27,6 +27,5 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        CU-8j90d5_Eduardo-Ortiz-Holguin
         python manage.py test
 
