@@ -33,7 +33,7 @@ class Block(models.Model):
         default=timezone.now, help_text="This is a field specify that date that of the block was created")
 
     def __str__(self):
-        return self.block_id
+        return str(self.block_id)
 
 
 class House(models.Model):
@@ -46,7 +46,7 @@ class House(models.Model):
         default=timezone.now, help_text="This is a field specify that date that of the house was created")
 
     def __str__(self):
-        return self.house_id
+        return str(self.house_id)
 
 
 class Resident(models.Model):
@@ -61,7 +61,7 @@ class Resident(models.Model):
         default=timezone.now, help_text="This is a field specify that date that of the resident was created")
 
     def __str__(self):
-        return self.resident_id
+        return str(self.resident_id)
 
 
 class Employee(models.Model):
@@ -76,7 +76,7 @@ class Employee(models.Model):
         default=timezone.now, help_text="This is a field specify that date that of the employee was created")
 
     def __str__(self):
-        return self.employee_id
+        return str(self.employee_id)
 
 
 class Role(models.Model):
@@ -87,7 +87,7 @@ class Role(models.Model):
         default=timezone.now, help_text="This is a field specify that date that of the role was created")
 
     def __str__(self):
-        return self.role_id
+        return str(self.role_id)
 
 
 class Role_employee(models.Model):
@@ -100,4 +100,4 @@ class Role_employee(models.Model):
         default=timezone.now, help_text="This is a field specify date that of the relation between the role and employee was created")
 
     def __str__(self):
-        return self.re_id
+        return str(self.re_id)
