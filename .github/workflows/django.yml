@@ -3,8 +3,6 @@ name: Django CI
 on:
   push:
     on: [push]
-  pull_request:
-    on: [push]
 
 jobs:
   build:
@@ -25,7 +23,7 @@ jobs:
         pipenv install
     - name: Run Lint
       run: |
-        pipenv run prospector
+        python -m prospector
     - name: Run Tests
       run: |
         pipenv run python manage.py test
