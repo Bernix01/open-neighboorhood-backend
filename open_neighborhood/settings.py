@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Graphql
-GRAPHENE={
-    'SCHEMA':'open_neighborhood.schema.schema'
+# Graphql
+GRAPHENE = {
+    'SCHEMA': 'open_neighborhood.schema.schema'
 }

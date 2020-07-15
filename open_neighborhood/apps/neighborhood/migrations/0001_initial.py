@@ -20,7 +20,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('birth', models.DateField()),
                 ('status', models.BooleanField()),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
             ],
         ),
     ]

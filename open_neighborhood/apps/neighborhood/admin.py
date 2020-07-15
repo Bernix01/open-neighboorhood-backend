@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Person , Resident, House, Block, Employee, Role_employee, Role
+from .models import Person, Resident, House, Block, Employee, Role_employee, Role
 # Register your models here.
 
 admin.site.register(Person)

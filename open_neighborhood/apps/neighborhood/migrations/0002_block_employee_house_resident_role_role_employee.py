@@ -17,17 +17,21 @@ class Migration(migrations.Migration):
             fields=[
                 ('block_id', models.AutoField(primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=200)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
             ],
         ),
         migrations.CreateModel(
             name='Employee',
             fields=[
-                ('employee_id', models.AutoField(primary_key=True, serialize=False)),
+                ('employee_id', models.AutoField(
+                    primary_key=True, serialize=False)),
                 ('phone', models.CharField(max_length=10)),
                 ('home_address', models.CharField(max_length=100)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('person_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Person')),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
+                ('person_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Person')),
             ],
         ),
         migrations.CreateModel(
@@ -35,8 +39,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('house_id', models.AutoField(primary_key=True, serialize=False)),
                 ('phone', models.CharField(max_length=10)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('block_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Block')),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
+                ('block_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Block')),
             ],
         ),
         migrations.CreateModel(
@@ -44,26 +50,34 @@ class Migration(migrations.Migration):
             fields=[
                 ('role_id', models.AutoField(primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=100)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
             ],
         ),
         migrations.CreateModel(
             name='Role_employee',
             fields=[
                 ('re_id', models.AutoField(primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('employee_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Employee')),
-                ('role_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Role')),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
+                ('employee_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Employee')),
+                ('role_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Role')),
             ],
         ),
         migrations.CreateModel(
             name='Resident',
             fields=[
-                ('resident_id', models.AutoField(primary_key=True, serialize=False)),
+                ('resident_id', models.AutoField(
+                    primary_key=True, serialize=False)),
                 ('landlord', models.BooleanField()),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('house_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.House')),
-                ('person_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Person')),
+                ('created_at', models.DateTimeField(
+                    default=django.utils.timezone.now)),
+                ('house_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.House')),
+                ('person_id', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='neighborhood.Person')),
             ],
         ),
     ]
