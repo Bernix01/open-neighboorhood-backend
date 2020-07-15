@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: "close"
-      POSTGRES_DB: neighboorhood
+      POSTGRES_DB: neighborhood
       POSTGRES_HOST_AUTH_METHOD: trust
       POSTGRES_USER: open
     ports:

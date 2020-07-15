@@ -26,5 +26,5 @@ jobs:
         pipenv run prospector
     - name: Run Tests
       run: |
-        pipenv run python manage.py test
+        docker-compose run runserver python manage.py tests
 
