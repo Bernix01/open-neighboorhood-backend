@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'open_neighborhood.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'neighborhood',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'db',
+        'NAME': os.getenv("DATABASE_NAME", 'neighborhood'),
+        'USER': os.getenv("DATABASE_USER", 'admin'),
+        'PASSWORD': os.getenv("DATABASE_PASSWORD", 'admin'),
+        'HOST': os.getenv("DATABASE_HOST", "localhost"),
         'PORT': 5432,
     }
 }

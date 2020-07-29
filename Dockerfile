@@ -2,6 +2,8 @@ FROM python:3.8
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
-COPY requirements.txt /code/
-RUN pip install -r requirements.txt
-COPY . /code/
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
+RUN pip install pipenv
+RUN pipenv install
+COPY . .
