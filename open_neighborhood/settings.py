@@ -93,7 +93,6 @@ DATABASES = {
 }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -151,3 +150,25 @@ GRAPHQL_JWT = {
     'JWT_EXPIRATION_DELTA': timedelta(minutes=5),
     'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),
 }
+
+# CORS
+
+if DEBUG:
+    INSTALLED_APPS += [
+        'corsheaders',
+    ]
+    MIDDLEWARE += [
+        'corsheaders.middleware.CorsMiddleware',
+    ]
+    CORS_ORIGIN_WHITELIST = [
+        'http://localhost:3000',
+        'https://localhost:3000',
+        'http://127.0.0.1:3000',
+        'https://127.0.0.1:3000',
+    ]
+    print("HELLO MTFFFFFF")
+    print("HELLO MTFFFFFF")
+    print("HELLO MTFFFFFF")
+    print("HELLO MTFFFFFF")
+    print("HELLO MTFFFFFF")
+    CORS_ALLOW_CREDENTIALS = True
