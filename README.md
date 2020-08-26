@@ -11,10 +11,10 @@ An app for a better neighborhood. Focused on four main objectives:
 
 ### Local
 
-0. Make sure you have installed `pipenv` [see here](https://pypi.org/project/pipenv/) and `docker` [see here](https://www.docker.com/get-started)
+0. Make sure you have installed `pipenv` [see here](https://pypi.org/project/pipenv/) and `docker` [see here](https://www.docker.com/get-started) **(optional)**
 1. Install all deps with `pipenv install`
 2. Create a `.env` file with your local information. See `.env.example`.
-3. Spin up your local database and database manager with `docker-compose up -d`. Database will be running on port `5432` and `pgadmin` on port `4444`.
+3. Spin up your local database and database manager with `docker-compose up -d`. Database will be running on port `5432` and `pgadmin` on port `4444`. Otherwise, if docker is not available you may have to spin up a local databse in any other way. Check the settings.py for the default database name and credentials or set the right environment variables.
 4. Enable your shell with the virtual environment with `pipenv shell` or just prefix every step with `pipenv run`
 5. Make sure all migrations are applied to your local `python manage.py migrate`
 6. Start the local server with `python manage.py runserver`
