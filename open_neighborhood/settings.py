@@ -136,7 +136,7 @@ GRAPHENE = {
     'SCHEMA': 'open_neighborhood.schema.schema',
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
-    ],
+    ]
 }
 
 # Authenticatio Backends

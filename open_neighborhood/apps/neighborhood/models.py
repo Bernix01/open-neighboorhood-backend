@@ -90,7 +90,7 @@ class Role(models.Model):
         return str(self.role_id)
 
 
-class Role_employee(models.Model):
+class RoleEmployee(models.Model):
     re_id = models.AutoField(primary_key=True)
     employee_id = models.ForeignKey(
         'Employee', on_delete=models.CASCADE, help_text="This is a field for the employee number")

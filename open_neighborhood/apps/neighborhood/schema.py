@@ -1,6 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
-from .models import Person, Resident, House, Block, Employee, Role_employee, Role
+from .models import Person, Resident, House, Block, Employee, RoleEmployee, Role
 from dataclasses import dataclass
 
 
@@ -31,9 +31,9 @@ class EmployeeType(DjangoObjectType):
         model = Employee
 
 
-class Role_employeeType(DjangoObjectType):
+class RoleEmployeeType(DjangoObjectType):
     class Meta:
-        model = Role_employee
+        model = RoleEmployee
 
 
 class RoleType(DjangoObjectType):
@@ -47,7 +47,7 @@ class Query(graphene.ObjectType):
     houses = graphene.List(HouseType)
     blocks = graphene.List(BlockType)
     employees = graphene.List(EmployeeType)
-    role_employees = graphene.List(Role_employeeType)
+    role_employees = graphene.List(RoleEmployeeType)
     roles = graphene.List(RoleType)
 
     def resolve_persons(self):
@@ -66,7 +66,10 @@ class Query(graphene.ObjectType):
         return Employee.objects.all()
 
     def resolve_role_employees(self):
-        return Role_employee.objects.all()
+        return RoleEmployee.objects.all()
 
     def resolve_roles(self):
         return Role.objects.all()
+
+
+schema = graphene.Schema(query=Query)
