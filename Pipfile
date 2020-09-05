@@ -27,6 +27,8 @@ Django = "==3.0.7"
 Rx = "==1.6.1"
 psycopg2-binary = "*"
 django-cors-headers = "*"
+dj-database-url = "*"
+decouple = "*"
 
 [requires]
 python_version = "3.8"
