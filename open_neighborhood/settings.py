@@ -81,25 +81,25 @@ WSGI_APPLICATION = 'open_neighborhood.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': os.getenv("DATABASE_NAME", 'neighborhood'),
-#        'USER': os.getenv("DATABASE_USER", 'admin'),
-#        'PASSWORD': os.getenv("DATABASE_PASSWORD", 'admin'),
-#        'HOST': os.getenv("DATABASE_HOST", "localhost"),
-#        'PORT': 5432,
-#    }
-#}
-
-import dj_database_url
-from decouple import config
-DATABASE ={
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv("DATABASE_NAME", 'neighborhood'),
+            'USER': os.getenv("DATABASE_USER", 'admin'),
+            'PASSWORD': os.getenv("DATABASE_PASSWORD", 'admin'),
+            'HOST': os.getenv("DATABASE_HOST", "localhost"),
+            'PORT': 5432,
+        }
+    }
+else:
+    import dj_database_url
+    from decouple import config
+    DATABASE = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
 
 
 # Password validation
@@ -137,11 +137,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS={
-    os.path.join(BASE_DIR,'static'),
+STATICFILES_DIRS = {
+    os.path.join(BASE_DIR, 'static'),
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
