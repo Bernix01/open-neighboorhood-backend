@@ -83,18 +83,18 @@ WSGI_APPLICATION = 'open_neighborhood.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.getenv("DATABASE_NAME", 'neighborhood'),
-            'USER': os.getenv("DATABASE_USER", 'admin'),
-            'PASSWORD': os.getenv("DATABASE_PASSWORD", 'admin'),
-            'HOST': os.getenv("DATABASE_HOST", "localhost"),
-            'PORT': 5432,
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("DATABASE_NAME", 'neighborhood'),
+        'USER': os.getenv("DATABASE_USER", 'admin'),
+        'PASSWORD': os.getenv("DATABASE_PASSWORD", 'admin'),
+        'HOST': os.getenv("DATABASE_HOST", "localhost"),
+        'PORT': 5432,
     }
-else:
+}
+
+if not DEBUG:
     import dj_database_url
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
