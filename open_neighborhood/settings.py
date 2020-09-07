@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get(
     "SECRET_KEY", 'nsvx1ypr190r1)2qnb-ixi3o_2zzd#ck+usj=#hhwo=^g5s*l4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ['DEBUG'] == 'TRUE'
 
 ALLOWED_HOSTS = ['*']
 

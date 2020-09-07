@@ -15,6 +15,7 @@ services:
       DATABASE_USER: admin
       DATABASE_NAME: neighborhood
       DATABASE_PASSWORD: admin
+      DEBUG: TRUE
       PIPENV_DONT_LOAD_ENV: 1
     volumes:
       - .:/code
