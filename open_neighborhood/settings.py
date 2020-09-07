@@ -96,12 +96,8 @@ if DEBUG:
     }
 else:
     import dj_database_url
-    from decouple import config
-    DATABASE = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
 
 
 # Password validation
