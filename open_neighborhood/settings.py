@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'open_neighborhood.apps.neighborhood',
     'open_neighborhood.apps.aliquots',
@@ -180,9 +182,7 @@ if DEBUG:
         'http://127.0.0.1:3000',
         'https://127.0.0.1:3000',
     ]
-    print("HELLO MTFFFFFF")
-    print("HELLO MTFFFFFF")
-    print("HELLO MTFFFFFF")
-    print("HELLO MTFFFFFF")
-    print("HELLO MTFFFFFF")
     CORS_ALLOW_CREDENTIALS = True
+
+
+django_heroku.settings(locals())
