@@ -7,3 +7,5 @@ db.sqlite3
 README.md
 docker-compose.yml
 .vscode
+Pipfile
+Pipfile.lock

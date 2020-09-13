@@ -44,6 +44,10 @@ The backend is continuous delivered and continuos integrated (with latest fronte
 
 To deploy the backend server with a new frontend version you must have the frontend production `build` folder. You can have either build it yourself or grab it from the latest release on the frontend repo. Just drop the build folder with all of its content on the root folder. Then run `python manage.py collectstatic` and commit the changes.
 
+### With docker
+
+Freeze the dependencies with `pipenv run pip freeze > requirements.txt` then `docker build` it.
+
 ## References
 
 * To enter pgAdmin webadmin use the following credentials:
