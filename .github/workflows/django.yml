@@ -36,6 +36,8 @@ jobs:
       run: |
         pipenv run prospector
     - name: Run Tests
+      env:
+        DEBUG: 'on'
       run: |
         pipenv run python manage.py test
     - uses: actions/checkout@v2
