@@ -29,6 +29,7 @@ django-cors-headers = "*"
 dj-database-url = "*"
 gunicorn = "*"
 django-heroku = "*"
+django-create-react-app = "*"
 
 [requires]
 python_version = "3.8"

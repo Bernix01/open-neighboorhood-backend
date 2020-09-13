@@ -7,22 +7,24 @@ services:
       POSTGRES_DB: neighborhood
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-  web:
-    build: .
-    command: pipenv run python manage.py runserver 0.0.0.0:8000
-    environment:
-      DATABASE_HOST: db
-      DATABASE_USER: admin
-      DATABASE_NAME: neighborhood
-      DATABASE_PASSWORD: admin
-      DEBUG: "TRUE"
-      PIPENV_DONT_LOAD_ENV: 1
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
+    ports: 
+      - 5432:5432
+  # web:
+  #   build: .
+  #   command: pipenv run python manage.py runserver 0.0.0.0:8000
+  #   environment:
+  #     DATABASE_HOST: db
+  #     DATABASE_USER: admin
+  #     DATABASE_NAME: neighborhood
+  #     DATABASE_PASSWORD: admin
+  #     DEBUG: "on"
+  #     PIPENV_DONT_LOAD_ENV: 1
+  #   volumes:
+  #     - .:/code
+  #   ports:
+  #     - "8000:8000"
+  #   depends_on:
+  #     - db
   dbAdmin:
     image: dpage/pgadmin4
     environment: 

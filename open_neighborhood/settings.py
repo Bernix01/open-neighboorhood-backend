@@ -26,7 +26,9 @@ SECRET_KEY = os.environ.get(
     "SECRET_KEY", 'nsvx1ypr190r1)2qnb-ixi3o_2zzd#ck+usj=#hhwo=^g5s*l4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DEBUG'] == 'TRUE'
+DEBUG = 'DEBUG' in os.environ and os.environ['DEBUG'] == 'on'
+
+CSRF_COOKIE_HTTPONLY = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,8 +47,18 @@ INSTALLED_APPS = [
     'open_neighborhood.apps.aliquots',
     'open_neighborhood.apps.visits',
     'open_neighborhood.apps.neighborhood_statistics',
+    'open_neighborhood.apps.frontend',
     'graphene_django',
+    'create_react_app',
 ]
+
+CREATE_REACT_APP = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'build',
+        'FRONT_END_SERVER': "http://localhost:3000/",
+        'is_dev': DEBUG,
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,6 +152,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'build','static'),
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -180,5 +193,5 @@ if DEBUG:
     ]
     CORS_ALLOW_CREDENTIALS = True
 
-
-django_heroku.settings(locals())
+if not DEBUG:
+    django_heroku.settings(locals())

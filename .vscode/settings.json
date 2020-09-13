@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "c:\\Users\\eduar\\enviroments\\soft2\\Scripts\\python.exe",
+    "python.pythonPath": "/Users/bernix01/.local/share/virtualenvs/open-neighborhood-backend-VHo6XAaJ/bin/python",
     "python.linting.pylintArgs": ["--load-plugins=pylint_django"]
 }

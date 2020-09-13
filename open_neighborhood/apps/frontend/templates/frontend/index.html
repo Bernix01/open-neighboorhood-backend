@@ -1,0 +1,13 @@
+{% load react_bundle_loader %}
+
+<html>
+  <head>
+    {% render_bundle_css  %}
+  </head>
+  <body>
+    <div id="root"></div>
+    {% csrf_token %}
+    {% render_bundle_js %}
+  </body>
+</head>
+    
