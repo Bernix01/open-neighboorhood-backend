@@ -40,7 +40,7 @@ If you have docker installed follow this steps:
 
 ## Deployment
 
-The backend is continuous delivered by github actions. Althought frontend it's not continuous integrated with the project.
+The backend is continuous delivered and continuos integrated (with latest frontend master) by github actions.
 
 To deploy the backend server with a new frontend version you must have the frontend production `build` folder. You can have either build it yourself or grab it from the latest release on the frontend repo. Just drop the build folder with all of its content on the root folder. Then run `python manage.py collectstatic` and commit the changes.
 
